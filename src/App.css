@@ -1,0 +1,42 @@
+.code-editor {
+  position: relative;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+textarea {
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
+  overflow: auto;
+  background: transparent;
+  color: transparent;
+  caret-color: black;
+  resize: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: 1px solid #ccc;
+  white-space: pre;
+}
+
+pre {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
+  pointer-events: none;
+  background: white;
+  color: black;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
