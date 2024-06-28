@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ReactDOM from 'react-dom'; // Import ReactDOM
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
-import 'prismjs/components/prism-jsx'; // Ensure JSX highlighting is included
+import 'prismjs/components/prism-jsx'; 
 import * as Babel from '@babel/standalone';
 
 const CodeEditor = () => {
@@ -13,7 +13,7 @@ const CodeEditor = () => {
   const runCode = useCallback(() => {
     try {
       const transpiledCode = Babel.transform(code, { presets: ['react', 'env'] }).code;
-      // eslint-disable-next-line no-new-func
+      // eslint-disable-next-line
       const render = new Function('React', 'ReactDOM', 'setOutput', transpiledCode);
       render(React, ReactDOM, setOutput);
     } catch (error) {
@@ -40,11 +40,9 @@ const CodeEditor = () => {
       const start = textarea.selectionStart;
       const end = textarea.selectionEnd;
 
-      // Insert 2 spaces for the tab
       const newValue = code.substring(0, start) + '  ' + code.substring(end);
       setCode(newValue);
 
-      // Move the cursor after the inserted spaces
       setTimeout(() => {
         textarea.selectionStart = textarea.selectionEnd = start + 2;
       }, 0);
